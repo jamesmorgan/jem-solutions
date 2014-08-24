@@ -1,0 +1,18 @@
+{
+  "name": "jem-solutions",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jamesmorgan/jem-solutions",
+  "authors": [
+    "James Morgan <james.morgan.e@googlemail.com>"
+  ],
+  "description": "JEM Solutions Ltd website",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
