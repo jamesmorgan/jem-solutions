@@ -1,4 +1,7 @@
 jem-solutions
 =============
 
-WIP - Company Website
+* Based on Bootstrap template
+
+TODO
+====
