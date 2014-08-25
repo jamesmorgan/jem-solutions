@@ -8,8 +8,8 @@ var dependencies = [
 // Application Internal Dependencies
 var appDependencies = [
     'myApp.controllers',
-    'myApp.services'
-//    'myApp.directives',
+    'myApp.services',
+    'myApp.directives'
 ];
 
 angular.module('myApp',
