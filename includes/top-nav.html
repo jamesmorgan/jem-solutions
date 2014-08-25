@@ -1,10 +1,18 @@
 <div class="masthead clearfix">
+    <!--<div class="inner">-->
+        <!--<h3 class="masthead-brand">...</h3>-->
+        <!--<ul class="nav masthead-nav">-->
+            <!--<li class="active"><a href="/">Home</a></li>-->
+            <!--<li class=""><a href="/about">About</a></li>-->
+            <!--<li class=""><a href="/contact">Contact</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
     <div class="inner">
         <h3 class="masthead-brand">...</h3>
-        <ul class="nav masthead-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+        <ul class="nav masthead-nav" ng-controller="NavMenuCtrl as mc">
+            <li ng-repeat="nav in mc.menuLinks" ng-class="mc.menuClass(nav.link)"> <a href='/{{nav.link}}'>{{nav.text}}</a>
+            </li>
         </ul>
     </div>
 </div>

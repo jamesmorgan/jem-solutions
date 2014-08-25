@@ -2,14 +2,16 @@
 
 // 3rd Party Dependencies and Libs
 var dependencies = [
-    'ngRoute'
+    'ngRoute',
+    'ngMessages'
 ];
 
 // Application Internal Dependencies
 var appDependencies = [
     'myApp.controllers',
     'myApp.services',
-    'myApp.directives'
+    'myApp.directives',
+    'myApp.topMenu'
 ];
 
 angular.module('myApp',
@@ -17,7 +19,7 @@ angular.module('myApp',
 ).
     config(function ($routeProvider, $locationProvider) {
         $routeProvider.
-            when('/', {
+            when('/home', {
                 templateUrl: 'partials/home.html',
                 controller: 'HomeCtrl'
             }).
@@ -30,7 +32,7 @@ angular.module('myApp',
                 controller: 'ContactCtrl'
             }).
             otherwise({
-                redirectTo: '/'
+                redirectTo: '/home'
             });
         $locationProvider.html5Mode(true);
     });
