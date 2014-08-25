@@ -1,4 +1,4 @@
-<div class="masthead clearfix">
+<div class="masthead clearfix" ng-controller="NavMenuCtrl as mc">
     <!--<div class="inner">-->
         <!--<h3 class="masthead-brand">...</h3>-->
         <!--<ul class="nav masthead-nav">-->
@@ -9,8 +9,8 @@
     <!--</div>-->
 
     <div class="inner">
-        <h3 class="masthead-brand">...</h3>
-        <ul class="nav masthead-nav" ng-controller="NavMenuCtrl as mc">
+        <h3 class="masthead-brand">{{mc.headText}}</h3>
+        <ul class="nav masthead-nav">
             <li ng-repeat="nav in mc.menuLinks" ng-class="mc.menuClass(nav.link)"> <a href='/{{nav.link}}'>{{nav.text}}</a>
             </li>
         </ul>

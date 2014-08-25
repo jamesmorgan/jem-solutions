@@ -15,6 +15,8 @@ angular.module('myApp.controllers', []).
 
 angular.module('myApp.topMenu', []).
     controller('NavMenuCtrl', function ($scope, $location) {
+        this.headText = '...';
+
         this.menuLinks = [
             {link: 'home', text: 'Home'},
             {link: 'about', text: 'About'},
