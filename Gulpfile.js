@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+var imageResize = require('gulp-image-resize');
+var rename = require("gulp-rename");
 
 var EXPRESS_PORT = 4000;
 var EXPRESS_ROOT = __dirname;
@@ -42,9 +44,24 @@ function notifyLiveReload(event) {
 // `gulp.task()` defines task that can be run calling `gulp xyz` from the command line
 // The `default` task gets called when no task name is provided to Gulp
 gulp.task('default', function () {
+
+    // Modify link images to same size 110x110
+    gulp.src('images/src/links/*')
+        .pipe(imageResize({
+            width: 110,
+            height: 110,
+            format: 'png',
+            crop: false,
+            upscale: false
+        }))
+        .pipe(rename(function (path) {
+            path.basename += "-110x100";
+        }))
+        .pipe(gulp.dest('images/dist/links/'));
+
     console.log('Gulp and running!');
     startExpress();
     startLiveReload();
+    gulp.watch(['/js/*', '*.html', '/css/*', '/images/*'], notifyLiveReload);
 
-    gulp.watch('*.html', notifyLiveReload);
 });

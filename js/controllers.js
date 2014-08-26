@@ -18,8 +18,9 @@ angular.module('myApp.topMenu', []).
         this.headText = '...';
 
         this.menuLinks = [
-            {link: 'home', text: 'Home'},
+            {link: '', text: 'Home'},
             {link: 'about', text: 'About'},
+            {link: 'http://www.morgan-design.com', text: 'Blog', external: true},
             {link: 'contact', text: 'Contact'}
         ];
 

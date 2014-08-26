@@ -19,7 +19,7 @@ angular.module('myApp',
 ).
     config(function ($routeProvider, $locationProvider) {
         $routeProvider.
-            when('/home', {
+            when('/', {
                 templateUrl: 'partials/home.html',
                 controller: 'HomeCtrl'
             }).
@@ -32,7 +32,7 @@ angular.module('myApp',
                 controller: 'ContactCtrl'
             }).
             otherwise({
-                redirectTo: '/home'
+                redirectTo: '/'
             });
         $locationProvider.html5Mode(true);
     });
