@@ -1,5 +1,8 @@
-'use strict';
+(function () {
+    'use strict';
 
-/* Services */
+    /* Services */
 
-angular.module('myApp.services', []).value('version', '0.0.1');
+    angular.module('myApp.services', []).value('version', '0.0.1');
+
+}());

@@ -1,24 +1,27 @@
-var gulp = require('gulp');
-var imageResize = require('gulp-image-resize');
-var rename = require("gulp-rename");
+var gulp = require('gulp'),
+    imageResize = require('gulp-image-resize'),
+    rename = require("gulp-rename"),
+    jshint = require('gulp-jshint'),
+    notify = require('gulp-notify'),
+    plumber = require('gulp-plumber');
 
 var EXPRESS_PORT = 4000;
 var EXPRESS_ROOT = __dirname;
 var LIVERELOAD_PORT = 35729;
 
+// Gulp plumber error handler
+var onError = function (err) {
+    console.log(err);
+};
+
 // Start Development Express Server
 function startExpress() {
     var express = require('express');
     var app = express();
-
     // Connect livereload-middle ware
-    // Pages served by Express now have a small bit of JS injected just before their body closing tag.
-    // This will make them react to the livereload updates.
     app.use(require('connect-livereload')());
-
     app.use(express.static(EXPRESS_ROOT));
     app.listen(EXPRESS_PORT);
-
     console.log('Express Started on port http://localhost:' + EXPRESS_PORT);
 }
 
@@ -41,27 +44,37 @@ function notifyLiveReload(event) {
     });
 }
 
-// `gulp.task()` defines task that can be run calling `gulp xyz` from the command line
-// The `default` task gets called when no task name is provided to Gulp
-gulp.task('default', function () {
+// Hint all of our custom developed Javascript to make sure things are clean
+gulp.task('jshint', function () {
+    return gulp.src('./js/*.js')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(notify({ message: 'JS Hinting task complete' }));
+});
 
-    // Modify link images to same size 110x110
+gulp.task('live_reload', function () {
+    startExpress();
+    startLiveReload();
+    gulp.watch(['/js/*', '*.html', '/css/*', '/images/*'], notifyLiveReload);
+});
+
+gulp.task('convert_link_images', function () {
     gulp.src('images/src/links/*')
         .pipe(imageResize({
             width: 80,
             height: 80,
             format: 'png',
             crop: false,
-            upscale: false
+            upscale: true
         }))
         .pipe(rename(function (path) {
             path.basename += "-80x80";
         }))
         .pipe(gulp.dest('images/dist/links/'));
-
-    console.log('Gulp and running!');
-    startExpress();
-    startLiveReload();
-    gulp.watch(['/js/*', '*.html', '/css/*', '/images/*'], notifyLiveReload);
-
 });
+
+// Lets us type "gulp" on the command line and run all of our tasks
+gulp.task('default', ['live_reload', 'convert_link_images', 'jshint']);
