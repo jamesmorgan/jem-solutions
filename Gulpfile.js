@@ -48,14 +48,14 @@ gulp.task('default', function () {
     // Modify link images to same size 110x110
     gulp.src('images/src/links/*')
         .pipe(imageResize({
-            width: 110,
-            height: 110,
+            width: 80,
+            height: 80,
             format: 'png',
             crop: false,
             upscale: false
         }))
         .pipe(rename(function (path) {
-            path.basename += "-110x100";
+            path.basename += "-80x80";
         }))
         .pipe(gulp.dest('images/dist/links/'));
 
