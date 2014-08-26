@@ -77,4 +77,6 @@ gulp.task('convert_link_images', function () {
 });
 
 // Lets us type "gulp" on the command line and run all of our tasks
-gulp.task('default', ['live_reload', 'convert_link_images', 'jshint']);
+gulp.task('default', ['live_reload', 'convert_link_images', 'jshint'], function () {
+    console.log("Gulp running...")
+});

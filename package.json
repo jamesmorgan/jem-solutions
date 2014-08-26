@@ -1,29 +1,29 @@
 {
-  "name": "jem-solutions",
-  "version": "0.0.1",
-  "description": "JE Morgan Solutions Ltd website",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jamesmorgan/jem-solutions.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jamesmorgan/jem-solutions/issues"
-  },
-  "homepage": "https://github.com/jamesmorgan/jem-solutions",
-  "devDependencies": {
-    "connect-livereload": "^0.4.0",
-    "express": "^4.8.5",
-    "gulp-image-resize": "^0.5.0",
-    "gulp-jshint": "^1.8.4",
-    "gulp-notify": "^1.5.0",
-    "gulp-plumber": "^0.6.5",
-    "gulp-rename": "^1.2.0",
-    "tiny-lr": "^0.1.0"
-  }
+    "name": "jem-solutions",
+    "version": "0.0.1",
+    "description": "JE Morgan Solutions Ltd website",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jamesmorgan/jem-solutions.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jamesmorgan/jem-solutions/issues"
+    },
+    "homepage": "https://github.com/jamesmorgan/jem-solutions",
+    "devDependencies": {
+        "connect-livereload": "^0.4.0",
+        "express": "^4.8.5",
+        "gulp-image-resize": "^0.5.0",
+        "gulp-jshint": "^1.8.4",
+        "gulp-notify": "^1.5.0",
+        "gulp-plumber": "^0.6.5",
+        "gulp-rename": "^1.2.0",
+        "tiny-lr": "^0.1.0"
+    }
 }

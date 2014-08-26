@@ -1,13 +1,13 @@
 (function () {
     'use strict';
 
-// 3rd Party Dependencies and Libs
+    // 3rd Party Dependencies and Libs
     var dependencies = [
         'ngRoute',
         'ngMessages'
     ];
 
-// Application Internal Dependencies
+    // Application Internal Dependencies
     var appDependencies = [
         'myApp.controllers',
         'myApp.services',
@@ -17,8 +17,7 @@
 
     angular.module('myApp',
         appDependencies.concat(dependencies)
-    ).
-        config(function ($routeProvider, $locationProvider) {
+    ).config(function ($routeProvider, $locationProvider) {
             $routeProvider.
                 when('/', {
                     templateUrl: 'partials/home.html',
@@ -37,5 +36,4 @@
                 });
             $locationProvider.html5Mode(true);
         });
-
 }());
