@@ -5,6 +5,18 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     plumber = require('gulp-plumber');
 
+var paths = {
+    images: {
+        links: {
+            src: 'images/links/src/',
+            dest: 'images/links/dest/'
+        }
+    },
+    scripts: {
+        src: 'js/'
+    }
+};
+
 var EXPRESS_PORT = 4000;
 var EXPRESS_ROOT = __dirname;
 var LIVERELOAD_PORT = 35729;
@@ -46,7 +58,7 @@ function notifyLiveReload(event) {
 
 // Hint all of our custom developed Javascript to make sure things are clean
 gulp.task('jshint', function () {
-    return gulp.src('./js/*.js')
+    return gulp.src(paths.scripts.src + '**/*.js')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -62,7 +74,7 @@ gulp.task('live_reload', function () {
 });
 
 gulp.task('convert_link_images', function () {
-    gulp.src('images/src/links/*')
+    gulp.src(paths.images.links.src + '*')
         .pipe(imageResize({
             width: 80,
             height: 80,
@@ -73,7 +85,8 @@ gulp.task('convert_link_images', function () {
         .pipe(rename(function (path) {
             path.basename += "-80x80";
         }))
-        .pipe(gulp.dest('images/dist/links/'));
+        .pipe(gulp.dest(paths.images.links.dest))
+        .pipe(notify({ message: 'Link Image Resize task complete' }));
 });
 
 // Lets us type "gulp" on the command line and run all of our tasks
