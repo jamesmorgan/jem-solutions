@@ -18,13 +18,13 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
             url: '/about',
             controller: 'AboutCtrl as about',
             templateUrl: 'partials/about.html',
-            title: 'Home'
+            title: 'About'
         })
         .state('Contact', {
             url: '/contact',
             controller: 'ContactCtrl as contact',
             templateUrl: 'partials/contact.html',
-            title: 'Home'
+            title: 'Contact'
         });
 
     $urlRouterProvider.otherwise('/');

@@ -2,7 +2,7 @@ jem-solutions
 =============
 
 * Based on Bootstrap template
-* Built using seed project: https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git
+* Based using seed project: https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git
  * Credit to seed project creator - [jakemmarsh](https://github.com/jakemmarsh)
 
  
