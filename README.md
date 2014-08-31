@@ -3,7 +3,9 @@ jem-solutions
 
 * Based on Bootstrap template
 * Built using seed project: https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git
+ * Credit to seed project creator - [jakemmarsh](https://github.com/jakemmarsh)
 
+ 
 1. Run `npm install` from the directory
 2. Run `gulp dev` (may require installing Gulp globally)
 3. Navigate to `localhost:3000` to view the application
@@ -23,9 +25,7 @@ jem-solutions
 * Email integration
  * Notification API
 * Update README links
-* Add seed project user to README
 * Add Google Tracking
-* Add LICENSE file
 * Extract Params from GulpJS file
 
 #### Other Installs
