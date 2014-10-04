@@ -112,9 +112,8 @@ gulp.task('create_link_logos', function () {
         .pipe(notify({ message: 'Running link images resize task...' }));
 });
 
-gulp.task('images', function () {
-    // Watch for new links
-    gulp.start('create_link_logos');
+gulp.task('images', function (cb) {
+
 });
 
 // Views task
@@ -131,20 +130,20 @@ gulp.task('views', function () {
 gulp.task('watch', function () {
 
     // Watch our scripts
-    gulp.watch(['app/js/**/*.js'], [
+    gulp.watch(['./app/js/**/*.js'], [
         'lint',
         'browserify'
     ]);
     // Watch our styles
-    gulp.watch(['app/styles/**/*.scss'], [
+    gulp.watch(['./app/styles/**/*.scss'], [
         'styles'
     ]);
     // Watch our views
-    gulp.watch(['index.html', 'app/views/**/*.html'], [
+    gulp.watch(['index.html', './app/views/**/*.html'], [
         'views'
     ]);
     // Watch our images
-    gulp.watch(['app/images/**/*.html'], [
+    gulp.watch(['app/images/**/src/*'], [
         'images'
     ]);
 });
