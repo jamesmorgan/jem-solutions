@@ -29,7 +29,7 @@ var server = express();
 // log all requests to the console
 server.use(morgan('dev'));
 // Add live reload
-server.use(livereload({port: livereloadport}));
+//server.use(livereload({port: livereloadport}));
 server.use(express.static('./'));
 // Serve index.html for all routes to leave routing up to Angular
 server.all('/*', function (req, res) {
@@ -154,7 +154,7 @@ gulp.task('dev', function () {
     // Start webserver
     server.listen(serverport);
     // Start live reload
-    lrserver.listen(livereloadport);
+    //lrserver.listen(livereloadport);
 
     // Run all tasks once
     runSequence('styles', 'views', 'browserify', 'images');
