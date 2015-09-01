@@ -7,14 +7,14 @@ var directivesModule = require('./_index.js');
  */
 function exampleDirective() {
 
-  return {
-    restrict: 'EA',
-    link: function($scope, $element) {
-      $element.on('click', function() {
-        console.log('element clicked');
-      });
-    }
-  };
+    return {
+        restrict: 'EA',
+        link: function ($scope, $element) {
+            $element.on('click', function () {
+                console.log('element clicked');
+            });
+        }
+    };
 
 }
 

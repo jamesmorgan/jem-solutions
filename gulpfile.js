@@ -33,14 +33,14 @@ server.use(morgan('dev'));
 server.use(express.static('./'));
 // Serve index.html for all routes to leave routing up to Angular
 server.all('/*', function (req, res) {
-    res.sendFile('index.html', { root: './' });
+    res.sendFile('index.html', {root: './'});
 });
 
 /************************************************
  Gulp Tasks
  ***********************************************/
 
-// JSHint task
+    // JSHint task
 gulp.task('lint', function () {
     // Watch for changes to all JS except template cache
     return gulp.src(['app/js/**/*.js', '!app/js/templates.js'])
@@ -71,7 +71,7 @@ gulp.task('browserify', function () {
         .pipe(streamify(rename({suffix: '.min'})))
         .pipe(gulp.dest('build/js'))
         .pipe(refresh(lrserver))
-        .pipe(notify({ message: 'Completed browserify task...' }));
+        .pipe(notify({message: 'Completed browserify task...'}));
 });
 
 // Styles task
@@ -109,7 +109,7 @@ gulp.task('create_link_logos', function () {
             path.basename += "-80x80";
         }))
         .pipe(gulp.dest("build/images/links/dest/"))
-        .pipe(notify({ message: 'Running link images resize task...' }));
+        .pipe(notify({message: 'Running link images resize task...'}));
 });
 
 gulp.task('images', function (cb) {

@@ -7,11 +7,15 @@ var controllersModule = require('./_index');
  */
 function ContactCtrl() {
 
-  // ViewModel
-  var vm = this;
+    // ViewModel
+    var vm = this;
 
-  vm.title = 'Test Title';
-  vm.number = 1234;
+    vm.title = 'Test Title';
+    vm.number = 1234;
+
+    vm.form = {
+
+    }
 
 }
 
