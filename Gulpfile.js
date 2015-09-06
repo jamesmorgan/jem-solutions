@@ -49,7 +49,8 @@ gulp.task('browserify', function () {
         .pipe(sourcemaps.init({loadMaps: true}))
         // Add transformation tasks to the pipeline here.
         .pipe(uglify())
-        .pipe(streamify(rename({suffix: '.min'})))
+        .pipe(sourcemaps.write('./'))
+        //.pipe(streamify(rename({suffix: '.min'})))
         .pipe(gulp.dest('build/js'))
         .pipe(notify({message: 'Completed browserify task...'}))
         .on('error', gutil.log.bind(gutil, 'Browserify Error'));
