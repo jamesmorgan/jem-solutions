@@ -43,10 +43,6 @@ gulp.task('browserify', function () {
         global: true
     }, ngAnnotate);
 
-    //b.transform({
-    //    global: true
-    //}, uglifyify);
-
     return b.bundle()
         .pipe(source('main.js'))
         .pipe(buffer())

@@ -9,11 +9,7 @@ function NavMenuCtrl($location) {
 
     // ViewModel
     var vm = this;
-
-    vm.title = 'Test Title';
-    vm.number = 1234;
-
-    this.menuLinks = [
+    vm.menuLinks = [
         {link: '#/', text: 'Home'},
         {link: '#/about', text: 'About'},
         {link: 'http://www.morgan-design.com', text: 'Blog', external: true},

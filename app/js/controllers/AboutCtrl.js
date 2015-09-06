@@ -8,10 +8,7 @@ var controllersModule = require('./_index');
 function AboutCtrl() {
 
     // ViewModel
-    var vm = this;
-
-    vm.title = 'Test Title';
-    vm.number = 1234;
+    //var vm = this;
 
 }
 

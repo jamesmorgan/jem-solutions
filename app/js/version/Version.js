@@ -2,4 +2,4 @@
 
 var versionModule = require('./_index.js');
 
-versionModule.value('version', '0.1');
+versionModule.value('version', '1.0');
