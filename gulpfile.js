@@ -72,7 +72,8 @@ gulp.task('styles', function () {
         }))
         // Add min to all processed
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('build/css/'));
+        .pipe(gulp.dest('build/css/'))
+        .pipe(notify({message: 'Compiled Styles....'}));
 });
 
 // Create link logos for front page
@@ -98,7 +99,8 @@ gulp.task('views', function () {
         .pipe(templateCache({
             standalone: true
         }))
-        .pipe(gulp.dest('app/js'));
+        .pipe(gulp.dest('app/js'))
+        .pipe(notify({message: 'Compiled HTML....'}));
 });
 
 gulp.task('watch', function () {

@@ -1,3 +1,14 @@
 .about a {
   text-decoration: underline;
 }
+
+/* The max width is dependant on the container (more info below) */
+.popover {
+  min-width: 150px;
+  max-width: 100%; /* Max Width of the popover (depending on the container!) */
+  z-index: 1060;
+  text-align: center;
+  //color: transparent;
+  background-color: #444444;
+  //text-decoration: underline;
+}

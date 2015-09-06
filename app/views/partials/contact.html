@@ -1,73 +1,79 @@
 <div class="row">
 
-    <form class="form-horizontal" role="form" name="contactForm">
+    <form class="form-horizontal" role="form" name="contactForm" novalidate>
 
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-success':contactForm.name.$valid, 'has-error':contactForm.name.$invalid}">
             <label for="name" class="col-sm-3 control-label">Name</label>
 
             <div class="col-sm-6">
                 <input type="text" class="form-control"
                        id="name" name="name" placeholder="Name"
-                       ng-model="contact.form.name" ng-minlength="5" ng-maxlength="250" required>
+                       ng-model="contact.form.name" ng-minlength="5" ng-maxlength="250" required
+                       popover="Who you are?" popover-trigger="focus" popover-placement="right" popover-animation="true">
             </div>
 
-            <div class="col-sm-9" ng-messages="contactForm.name.$error" role="alert">
+            <div class="col-sm-9 help-block" ng-messages="contactForm.name.$error" role="alert">
                 <div ng-message="required">
-                    <p class="text-danger">You did not enter a field</p>
+                    <p class="text-danger">You did not enter a name</p>
                 </div>
                 <div ng-message="minlength">
-                    <p class="text-danger">Your field is too short</p>
+                    <p class="text-danger">Name is too short</p>
                 </div>
                 <div ng-message="maxlength">
-                    <p class="text-danger">Your field is too long</p>
+                    <p class="text-danger">Name is too long</p>
                 </div>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-success':contactForm.email.$valid, 'has-error':contactForm.email.$invalid}">
             <label for="email" class="col-sm-3 control-label">Email</label>
 
             <div class="col-sm-6">
                 <input type="email" class="form-control"
                        id="email" name="email" placeholder="Email"
-                       ng-model="contact.form.email" ng-minlength="5" ng-maxlength="250" required>
+                       ng-model="contact.form.email" ng-minlength="5" ng-maxlength="250" required
+                       popover="Who do I response to?" popover-trigger="focus" popover-placement="right" popover-animation="true">
             </div>
 
-            <div class="col-sm-9" ng-messages="contactForm.email.$error" role="alert">
+            <div class="col-sm-9 help-block" ng-messages="contactForm.email.$error" role="alert">
                 <div ng-message="required">
-                    <p class="text-danger">You did not enter a field</p>
+                    <p class="text-danger">You did not enter a email</p>
                 </div>
                 <div ng-message="minlength">
-                    <p class="text-danger">Your field is too short</p>
+                    <p class="text-danger">Email field is too short</p>
                 </div>
                 <div ng-message="maxlength">
-                    <p class="text-danger">Your field is too long</p>
+                    <p class="text-danger">Email field is too long</p>
                 </div>
                 <div ng-message="email">
-                    <p class="text-danger">Your email address is invalid</p>
+                    <p class="text-danger">Email address is invalid</p>
                 </div>
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-success':contactForm.details.$valid, 'has-error':contactForm.details.$invalid}">
             <label for="details" class="col-sm-3 control-label">Details</label>
 
             <div class="col-sm-6">
                 <textarea class="form-control"
                           id="details" name="details" placeholder="Details"
-                          ng-model="contact.form.details" ng-minlength="20" ng-maxlength="1500" required>
+                          ng-model="contact.form.details" ng-minlength="20" ng-maxlength="1500" required
+                          popover="How can I help?" popover-trigger="focus" popover-placement="right" popover-animation="true">
                 </textarea>
             </div>
 
-            <div class="col-sm-9" ng-messages="contactForm.details.$error" role="alert">
+            <div class="col-sm-9 help-block" ng-messages="contactForm.details.$error" role="alert">
                 <div ng-message="required">
-                    <p class="text-danger">You did not enter a field</p>
+                    <p class="text-danger">You did not add some details</p>
                 </div>
                 <div ng-message="minlength">
-                    <p class="text-danger">Your field is too short</p>
+                    <p class="text-danger">Details are missing small</p>
                 </div>
                 <div ng-message="maxlength">
-                    <p class="text-danger">Your field is too long</p>
+                    <p class="text-danger">Details are too long</p>
                 </div>
             </div>
         </div>
@@ -75,7 +81,7 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-12">
                 <button type="submit" class="btn btn-default"
-                        ng-disabled="contactForm.invalid" ng-click="contact.sendEmail()">Send
+                        ng-disabled="contactForm.$invalid" ng-click="contact.sendEmail()">Send
                 </button>
             </div>
         </div>

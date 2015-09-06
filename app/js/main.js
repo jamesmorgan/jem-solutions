@@ -7,6 +7,7 @@ require('angular-ui-router');
 require('angular-messages');
 require('firebase');
 require('angularfire');
+require('angular-bootstrap');
 require('./templates');
 require('./controllers/_index');
 require('./services/_index');
@@ -21,6 +22,7 @@ angular.element(document).ready(function () {
         'firebase',
         'templates',
         'ngMessages',
+        'ui.bootstrap',
         'app.controllers',
         'app.services',
         'app.directives',
