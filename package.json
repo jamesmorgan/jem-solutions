@@ -1,55 +1,53 @@
 {
-    "name": "jem-solutions",
-    "version": "0.1.0",
-    "author": "James Morgan <james.morgan.e(@)googlemail.com>",
-    "license": "MIT",
-    "description": "JE Morgan Solutions Ltd website - using AngularJS, SASS, Gulp, and Browserify while also utilizing best practices.",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jamesmorgan/jem-solutions.git"
-    },
-    "main": "index.html",
-    "bugs": {
-        "url": "https://github.com/jamesmorgan/jem-solutions/issues"
-    },
-    "homepage": "http://www.jem-solutions.co.uk",
-    "keywords": [
-        "express",
-        "gulp",
-        "browserify",
-        "angular",
-        "sass",
-        "boilerplate"
-    ],
-    "private": true,
-    "engines": {
-        "node": ">=0.10.26"
-    },
-    "devDependencies": {
-        "angular": "1.2.19",
-        "angular-ui-router": "0.2.10",
-        "browserify": "5.10.0",
-        "browserify-ngannotate": "0.1.0",
-        "connect-livereload": "0.4.0",
-        "express": "4.7.2",
-        "gulp": "3.8.6",
-        "gulp-angular-templatecache": "1.3.0",
-        "gulp-image-resize": "0.5.0",
-        "gulp-jshint": "1.8.3",
-        "gulp-livereload": "2.1.0",
-        "gulp-notify": "1.5.0",
-        "gulp-rename": "1.2.0",
-        "gulp-sass": "0.7.2",
-        "gulp-streamify": "0.0.5",
-        "karma": "0.12.21",
-        "karma-browserify": "0.2.1",
-        "morgan": "1.2.2",
-        "run-sequence": "0.3.6",
-        "tiny-lr": "0.0.9",
-        "uglifyify": "2.5.0",
-        "vinyl-source-stream": "0.1.1"
-    },
-    "scripts": {
-        "test": "karma start karma.conf"
-    }
+  "name": "jem-solutions",
+  "version": "1.0.0",
+  "author": "James Morgan <james.morgan.e(@)googlemail.com>",
+  "license": "MIT",
+  "description": "JE Morgan Solutions Ltd website - using AngularJS, SASS, Gulp, and Browserify while also utilizing best practices.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesmorgan/jem-solutions.git"
+  },
+  "main": "index.html",
+  "bugs": {
+    "url": "https://github.com/jamesmorgan/jem-solutions/issues"
+  },
+  "homepage": "http://www.jem-solutions.co.uk",
+  "keywords": [
+    "gulp",
+    "angular",
+    "ui-router",
+    "browserify",
+    "sass",
+    "boilerplate"
+  ],
+  "private": true,
+  "devDependencies": {
+    "angular": "1.4.5",
+    "angular-ui-router": "0.2.15",
+    "browserify": "11.0.1",
+    "browserify-ngannotate": "1.0.1",
+    "express": "4.13.3",
+    "gulp": "3.9.0",
+    "gulp-angular-templatecache": "1.7.0",
+    "gulp-image-resize": "0.6.0",
+    "gulp-jshint": "1.11.2",
+    "gulp-notify": "2.2.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "2.0.4",
+    "gulp-streamify": "1.0.0",
+    "karma": "0.13.9",
+    "karma-browserify": "4.3.0",
+    "morgan": "1.6.1",
+    "run-sequence": "1.1.2",
+    "http-server": "^0.7.4",
+    "uglifyify": "3.0.1",
+    "vinyl-source-stream": "1.1.0"
+  },
+  "scripts": {
+    "test": "echo 'No Tests yet'",
+    "postinstall": "",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 5000"
+  }
 }

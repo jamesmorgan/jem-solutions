@@ -3,9 +3,7 @@
 /**
  * @ngInject
  */
-function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
-
-    $locationProvider.html5Mode(true);
+function Routes($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state('Home', {

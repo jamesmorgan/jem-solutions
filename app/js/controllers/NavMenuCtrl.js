@@ -14,10 +14,10 @@ function NavMenuCtrl($location) {
     vm.number = 1234;
 
     this.menuLinks = [
-        {link: '', text: 'Home'},
-        {link: 'about', text: 'About'},
+        {link: '#/', text: 'Home'},
+        {link: '#/about', text: 'About'},
         {link: 'http://www.morgan-design.com', text: 'Blog', external: true},
-        {link: 'contact', text: 'Contact'}
+        {link: '#/contact', text: 'Contact'}
     ];
 
     this.menuClass = function (page) {
