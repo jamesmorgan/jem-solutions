@@ -16,9 +16,9 @@ function NavMenuCtrl($location) {
         {link: '#/contact', text: 'Contact'}
     ];
 
-    this.menuClass = function (page) {
+    this.isActive = function (page) {
         var currentRoute = $location.path().substring(1) || 'home';
-        return page === currentRoute ? 'active' : '';
+        return (page || "").indexOf(currentRoute) != -1;
     };
 
 }

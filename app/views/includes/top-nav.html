@@ -2,7 +2,7 @@
     <div class="inner">
         <h3 class="masthead-brand">{{mc.headText}}</h3>
         <ul class="nav masthead-nav">
-            <li ng-repeat="nav in mc.menuLinks" ng-class="mc.menuClass(nav.link)">
+            <li ng-repeat="nav in mc.menuLinks" ng-class="{'active': mc.isActive(nav.link)}">
                 <a href='{{nav.link}}' ng-if="nav.external" target="_blank">{{nav.text}}</a>
                 <a href='/{{nav.link}}' ng-if="!nav.external">{{nav.text}}</a>
             </li>
