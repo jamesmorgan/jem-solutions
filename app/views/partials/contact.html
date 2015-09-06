@@ -80,8 +80,21 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-12">
+                <div class="pull-left">
+                    <a href="https://twitter.com/intent/tweet?screen_name=jimbob_87" class="twitter-mention-button" data-size="large"
+                       data-related="jimbob_87">Tweet to @jimbob_87</a>
+                    <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');</script>
+                </div>
                 <button type="submit" class="btn btn-default"
-                        ng-disabled="contactForm.$invalid" ng-click="contact.sendEmail()">Send
+                        ng-disabled="contactForm.$invalid" ng-click="contact.sendEmail()">Contact Me
                 </button>
             </div>
         </div>
