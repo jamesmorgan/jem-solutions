@@ -6,13 +6,16 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     streamify = require('gulp-streamify'),
-    uglifyify = require('uglifyify'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     ngAnnotate = require('browserify-ngannotate'),
     templateCache = require('gulp-angular-templatecache'),
     imageResize = require('gulp-image-resize'),
-    notify = require('gulp-notify');
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    buffer = require('vinyl-buffer'),
+    notify = require('gulp-notify'),
+    gutil = require('gulp-util');
 
 /************************************************
  Gulp Tasks
@@ -40,15 +43,20 @@ gulp.task('browserify', function () {
         global: true
     }, ngAnnotate);
 
-    b.transform({
-        global: true
-    }, uglifyify);
+    //b.transform({
+    //    global: true
+    //}, uglifyify);
 
     return b.bundle()
         .pipe(source('main.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        // Add transformation tasks to the pipeline here.
+        .pipe(uglify())
         .pipe(streamify(rename({suffix: '.min'})))
         .pipe(gulp.dest('build/js'))
-        .pipe(notify({message: 'Completed browserify task...'}));
+        .pipe(notify({message: 'Completed browserify task...'}))
+        .on('error', gutil.log.bind(gutil, 'Browserify Error'));
 });
 
 // Styles task
