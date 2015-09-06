@@ -15,13 +15,13 @@
 
             <div class="col-sm-9 help-block" ng-messages="contactForm.name.$error" role="alert">
                 <div ng-message="required">
-                    <p class="text-danger">You did not enter a name</p>
+                    <p class="text-warning">You must enter a name</p>
                 </div>
                 <div ng-message="minlength">
-                    <p class="text-danger">Name is too short</p>
+                    <p class="text-danger">Name too short</p>
                 </div>
                 <div ng-message="maxlength">
-                    <p class="text-danger">Name is too long</p>
+                    <p class="text-danger">Name too long</p>
                 </div>
             </div>
         </div>
@@ -39,16 +39,16 @@
 
             <div class="col-sm-9 help-block" ng-messages="contactForm.email.$error" role="alert">
                 <div ng-message="required">
-                    <p class="text-danger">You did not enter a email</p>
+                    <p class="text-warning">You must enter a email</p>
                 </div>
                 <div ng-message="minlength">
-                    <p class="text-danger">Email field is too short</p>
+                    <p class="text-danger">Email too short</p>
                 </div>
                 <div ng-message="maxlength">
-                    <p class="text-danger">Email field is too long</p>
+                    <p class="text-danger">Email too long</p>
                 </div>
                 <div ng-message="email">
-                    <p class="text-danger">Email address is invalid</p>
+                    <p class="text-danger">Email address invalid</p>
                 </div>
             </div>
         </div>
@@ -67,13 +67,13 @@
 
             <div class="col-sm-9 help-block" ng-messages="contactForm.details.$error" role="alert">
                 <div ng-message="required">
-                    <p class="text-danger">You did not add some details</p>
+                    <p class="text-warning">Please some details</p>
                 </div>
                 <div ng-message="minlength">
-                    <p class="text-danger">Details are missing small</p>
+                    <p class="text-danger">Details not enough</p>
                 </div>
                 <div ng-message="maxlength">
-                    <p class="text-danger">Details are too long</p>
+                    <p class="text-danger">Details too long</p>
                 </div>
             </div>
         </div>
