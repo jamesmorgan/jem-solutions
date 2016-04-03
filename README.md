@@ -8,7 +8,7 @@ jem-solutions
  
 1. Run `npm install` from the directory
 2. Run `gulp dev` (may require installing Gulp globally)
-3. Navigate to `localhost:3000` to view the application
+3. To host locally `python -m SimpleHTTPServer`
 
 #### Tech
 * angular-ui
